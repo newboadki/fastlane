@@ -113,6 +113,8 @@ module Trainer
         type = data["_type"]["_name"]
         if type == "ActionTestSummaryGroup"
           return ActionTestSummaryGroup.new(data, parent)
+        elsif type == "ActionTestSummary"
+          return ActionTestSummaryGroup.new(data, parent)
         elsif type == "ActionTestMetadata"
           return ActionTestMetadata.new(data, parent)
         else
